@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="IceRing">
 <meta property="og:description" content="css介绍层叠样式表(英文全称：Cascading Style Sheets)是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言。CSS不仅可以静态地修饰网页，还可以配合各种脚本语言动态地对网页各元素进行格式化。 层叠：多个样式表修饰同一个元素，拥有继承和优先级的属性。 在html中如何应用css 在元素中添加style属性，style">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-07T06:49:23.079Z">
+<meta property="og:updated_time" content="2019-08-09T07:33:41.369Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css学习笔记">
 <meta name="twitter:description" content="css介绍层叠样式表(英文全称：Cascading Style Sheets)是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言。CSS不仅可以静态地修饰网页，还可以配合各种脚本语言动态地对网页各元素进行格式化。 层叠：多个样式表修饰同一个元素，拥有继承和优先级的属性。 在html中如何应用css 在元素中添加style属性，style">
@@ -247,10 +247,29 @@
 </ol>
 </li>
 </ol>
+<h2 id="过渡效果-transition"><a href="#过渡效果-transition" class="headerlink" title="过渡效果(transition)"></a>过渡效果(transition)</h2><ol>
+<li><p>transition和animation的区别</p>
+<p>transition必须要触发，一般使用:hover</p>
+<p>transition不需要设置关键帧<br>简单的过渡效果使用transition，复杂的动画使用animation</p>
+</li>
+<li><p>用法</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">transition-property 	指定过渡的属性</span><br><span class="line">	可以指定一个属性 	width</span><br><span class="line">	可以指定多个属性		width,background</span><br><span class="line">	可以指定所有属性 	all</span><br><span class="line">transition-duration 	过渡持续的时间</span><br><span class="line">	可以指定秒，以及毫秒 	s /ms</span><br><span class="line">transition-timing-function 	过渡的时间曲线</span><br><span class="line">transition-delay 			过渡延迟</span><br><span class="line">	可以指定秒，以及毫秒 	s /ms</span><br><span class="line">transition 						速写</span><br><span class="line">	transition:property duration timing delay;</span><br><span class="line">	例如：</span><br><span class="line">	transition: margin-right 2s ease-in-out .5s;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="变形-transform"><a href="#变形-transform" class="headerlink" title="变形(transform:)"></a>变形(transform:)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">scale(2)		变大</span><br><span class="line">	skewX(45deg) 		倾斜</span><br><span class="line">	skewY(45deg) 		倾斜</span><br><span class="line">	skew(45deg) 		倾斜</span><br><span class="line">	rotate(45deg)		旋转</span><br><span class="line">	rotateX(45deg)		旋转</span><br><span class="line">	rotateY(45deg)		旋转</span><br><span class="line">	rotateZ(45deg)		旋转</span><br><span class="line">	translateX(200px) 	</span><br><span class="line">	translateY(300px) 	</span><br><span class="line">	translate(200px,300px)</span><br><span class="line">	...</span><br><span class="line">	mdn</span><br></pre></td></tr></table></figure>
+
+<h2 id="媒体查询"><a href="#媒体查询" class="headerlink" title="媒体查询"></a>媒体查询</h2><ol>
+<li><p>网页在不同终端下显示不同布局？</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">1) 多套网页(京东，淘宝，网易)</span><br><span class="line">	pc 			index_pc.html </span><br><span class="line">	mobile 	index_mobile.html </span><br><span class="line">	pad 		index_pad.html</span><br><span class="line">2) 一套（）</span><br><span class="line">	index_all.html</span><br><span class="line">	可以适应所有的屏幕</span><br><span class="line">				</span><br><span class="line">	@media screen and (min-width: 768px) and (max-width: 1024px) &#123;&#125;</span><br><span class="line">	@media screen and (min-width: 1024px)&#123;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>响应式布局框架（bootstrap）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">布局（响应式）</span><br><span class="line">	1) 媒体查询 media</span><br><span class="line">	2) 布局（<span class="built_in">float</span> , flex）</span><br><span class="line">框架</span><br><span class="line">	Bootstrap</span><br><span class="line"></span><br><span class="line">	十二栅格系统</span><br><span class="line"></span><br><span class="line">	vue elementui 24栅格系统</span><br></pre></td></tr></table></figure></li>
+</ol>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年08月07日 14:49</p>
+        <p>最后更新： 2019年08月09日 15:33</p>
         <p>原始链接： <a class="post-url" href="/2019/08/05/css学习笔记/" title="css学习笔记">https://IceRing0.github.io/2019/08/05/css学习笔记/</a></p>
         <footer>
             <a href="https://IceRing0.github.io">
@@ -370,7 +389,7 @@
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#css"><span class="post-toc-text">css</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#介绍"><span class="post-toc-text">介绍</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#在html中如何应用css"><span class="post-toc-text">在html中如何应用css</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#语法"><span class="post-toc-text">语法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#选择器"><span class="post-toc-text">选择器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#规则"><span class="post-toc-text">规则</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#单位"><span class="post-toc-text">单位</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#布局"><span class="post-toc-text">布局</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#动画"><span class="post-toc-text">动画</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#css"><span class="post-toc-text">css</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#介绍"><span class="post-toc-text">介绍</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#在html中如何应用css"><span class="post-toc-text">在html中如何应用css</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#语法"><span class="post-toc-text">语法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#选择器"><span class="post-toc-text">选择器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#规则"><span class="post-toc-text">规则</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#单位"><span class="post-toc-text">单位</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#布局"><span class="post-toc-text">布局</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#动画"><span class="post-toc-text">动画</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#过渡效果-transition"><span class="post-toc-text">过渡效果(transition)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#变形-transform"><span class="post-toc-text">变形(transform:)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#媒体查询"><span class="post-toc-text">媒体查询</span></a></li></ol></li></ol>
         </nav>
     </aside>
     
